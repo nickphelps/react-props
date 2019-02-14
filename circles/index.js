@@ -8,6 +8,10 @@ subscribe(() => {
 dispatch({ type: null }); // Here we're making a call to dispatch() - this triggers the first render.
 
 // Write DOM event listeners here, make them dispatch actions to the Redux store 
+
+// const randomCircleButton = document.getElementById('addCircle')
+// randomCircleButton.addEventListener('click', (e) => dispatch({type: 'ADD-CIRCLE'}))
+
 let button = document.getElementById('addCircle');
 button.addEventListener('click', e => {
     dispatch({

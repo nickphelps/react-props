@@ -27,6 +27,7 @@ const reducer = (state = initialState, action) => {
             { radius, color }
         ]
     }
-
     return state;
 }
+
+//global state is accessible through props
