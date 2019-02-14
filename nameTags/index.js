@@ -2,7 +2,7 @@ const { createStore } = Redux;
 const { subscribe, dispatch, getState } = createStore(reducer);
 
 subscribe(() => {
-    ReactDOM.render(<App nameTags={getState()} />, document.getElementById('nameTagsContainer'))
+    ReactDOM.render(<NameTag nameTags={getState()} />, document.getElementById('nameTagsContainer'))
 });
 
 dispatch({ type: null }); // Here we're making a call to dispatch() - this triggers the first render.
