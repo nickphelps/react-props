@@ -1,4 +1,4 @@
-const initialState = [
+const initialState = ([
     {
         user: {
             handle: "@officialjaden",
@@ -35,19 +35,20 @@ const initialState = [
         retweets: 3,
         replies: 144
     }
-]
-;
+])
 
-const reducer = (state = initialState, action) => {
+const immutableInitialState = Immutable.fromJS(initialState)
+
+const reducer = (state = immutableInitialState, action) => {
     // Handle actions here - make sure you don't mutate the state!
     const { type } = action;
 
-    const reducer = (state = initialState, action) => {
+    const reducer = (state = immutableInitialState, action) => {
         // Handle actions here - make sure you don't mutate the state!
         const { type, method } = action;
 
         if (type == 'SORT') {
-            return [...state].sort((a, b) => b[method] - a[method]);
+            return [...immutableInitialState].sort((a, b) => b[method] - a[method]);
         }
 
         return state;
